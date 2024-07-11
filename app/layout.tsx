@@ -7,6 +7,8 @@ import {
   UserButton
 } from '@clerk/nextjs'
 import './globals.css'
+import PageHeader from '@/components/page-header';
+
 export default function RootLayout({
   children,
 }: {
@@ -16,12 +18,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+          <PageHeader />
           {children}
         </body>
       </html>
