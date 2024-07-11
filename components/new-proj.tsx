@@ -13,13 +13,14 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Plus } from "lucide-react";
 import { createProject } from "@/actions/createProject";
+import SubmitButton from "@/components/submit-proj-btn";
 
 const NewProjBtn = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>
-          <Plus className="w-4 h-4 mr-1" />Create Project</Button>
+        <Button className="rounded-full">
+          <Plus className="w-4 h-4" /></Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px] rounded-md">
         <DialogHeader>
@@ -43,8 +44,7 @@ const NewProjBtn = () => {
             <Label htmlFor="description">Description</Label>
             <Textarea name="description" id="description" placeholder="Description (optional)" />
           </div>
-          <Button type='submit'>Create Project</Button>
-        </form>
+          <SubmitButton />        </form>
       </DialogContent>
     </Dialog>
   )

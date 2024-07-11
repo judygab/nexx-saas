@@ -2,6 +2,7 @@
 import { db } from "@/db";
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { projects } from "@/db/schema";
+import { redirect } from "next/navigation";
 
 export async function createProject(formData: FormData) {
   const { userId } = auth();
@@ -15,5 +16,5 @@ export async function createProject(formData: FormData) {
 
   const [newProject] = await db.insert(projects).values(project).returning({ insertedId: projects.id })
 
-  return newProject.insertedId;
+  redirect(`/projects/${newProject.insertedId}/instructions`);
 }
