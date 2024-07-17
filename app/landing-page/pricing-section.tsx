@@ -6,6 +6,7 @@ export type PricingPlan = {
   description: string;
   isPopular: boolean;
   features: string[];
+  url: string;
 }
 
 export const pricingPlans: PricingPlan[] = [
@@ -14,6 +15,7 @@ export const pricingPlans: PricingPlan[] = [
     price: 0,
     description: "For small teams just getting started",
     isPopular: false,
+    url: "/dashboard",
     features: [
       "3 projects",
       "Unlimited users",
@@ -26,6 +28,7 @@ export const pricingPlans: PricingPlan[] = [
     price: 6.99,
     description: "For growing teams",
     isPopular: true,
+    url: "/payments/subscribe?plan=monthly",
     features: [
       "Unlimited projects",
       "Unlimited users",
@@ -38,6 +41,7 @@ export const pricingPlans: PricingPlan[] = [
     price: 39.99,
     description: "Upgrade to save more!",
     isPopular: false,
+    url: "/payments/subscribe?plan=yearly",
     features: [
       "Unlimited projects",
       "Unlimited users",

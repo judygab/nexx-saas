@@ -1,7 +1,15 @@
+"use client";
 import { PricingPlan } from "./pricing-section";
 import { Check } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-const PricingCard = ({ title, price, description, features, isPopular }: PricingPlan) => {
+const PricingCard = ({ title, price, description, features, isPopular, url }: PricingPlan) => {
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push(url);
+  }
+
   return (
     <div className="border flex flex-col justify-between bg-white/20 rounded-lg h-full p-6 hover:shadow-md text-left relative">
       {
@@ -34,7 +42,7 @@ const PricingCard = ({ title, price, description, features, isPopular }: Pricing
         </ul>
       </div>
       <div>
-        <button className="bg-gray-900 py-2 mt-3 rounded-lg text-white w-full">
+        <button onClick={onClick} className="bg-gray-900 py-2 mt-3 rounded-lg text-white w-full">
           Select Plan
         </button>
       </div>
