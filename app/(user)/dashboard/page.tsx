@@ -21,6 +21,6 @@ export default async function Page() {
     <div>
       <div className="flex items-center justify-center gap-3">
         <h1 className="text-3xl font-bold text-center my-4">Your Projects</h1>{subscribed !== true && userProjects.length > maxFreeProjects ? null : <NewProjBtn />}
-      </div>{!subscribed ? <ProjectsList projects={userProjects} /> : null}</div>
+      </div><ProjectsList projects={userProjects} subscribed={subscribed} /></div>
   )
 }
